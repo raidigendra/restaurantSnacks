@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost/uploadFiles')
 const upload = multer({
   storage: multer.diskStorage({
     destination: (req, file, callback) => {
-      if (!fs.existsSync(dir)) {
+      if (!fs.existsSync(dir))  {
         fs.mkdirSync(dir);
       }
       callback(null, './uploads');
